@@ -1,0 +1,247 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="LevelTestStyleSheet.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta charset="utf-8" />
+    <title>Easy Level</title>
+</head>
+<body>
+
+
+    <header>
+
+        <!-- As a heading -->
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+                <h5 style="color:red">Easy Level</h5>
+                <h5 style="color:blue">Easy Level</h5>
+
+                <img src="img/c6.jpg" width="400" height="100" />
+                <h5 style="color:palevioletred">Easy Level</h5>
+                <h5 style="color:deeppink">Easy Level</h5>
+
+
+            </div>
+        </nav>
+    </header>
+
+
+    <main>
+
+        <fieldset>
+            <legend>  </legend>
+
+            <form style="background-image: url('img/z2.gif'); background-repeat: no-repeat; background-position:right" method="get">
+                <br />
+                <h3 style="color:fuchsia">  Please answer all the questions to move on the next level : </h3>
+                <br />
+                <div>
+                    <div style="display:inline; ">
+                        <label for="Question1"> Question 1 : </label>
+                        <br />
+                        <label for="Question1" id="Qus1"> </label>
+
+                    </div>
+                    <div style="display: inline; padding-left: 3%;">
+                        <input style="border: solid salmon" id="answ1" type="number" name="Question" value="" />
+                    </div>
+                </div>
+
+
+                <div>
+                    <div style="display:inline; ">
+                        <label for="Question1"> Question 2 : </label>
+                        <br />
+                        <label for="Question1" id="Qus2"> </label>
+
+                    </div>
+                    <div style="display: inline; padding-left: 3%;">
+                        <input style="border: solid thistle" id="answ2" type="number" name="Question" value="" />
+                    </div>
+                </div>
+
+
+                <div>
+                    <div style="display:inline; ">
+                        <label for="Question1"> Question 3 : </label>
+                        <br />
+                        <label for="Question1" id="Qus3"> </label>
+                    </div>
+                    <div style="display: inline; padding-left: 3%;">
+                        <input style="border: solid pink" id="answ3" type="number" name="Question" value="" />
+                    </div>
+                </div>
+
+
+
+                <div>
+                    <div style="display:inline; ">
+                        <label for="Question1"> Question 4 : </label>
+                        <br />
+                        <label for="Question1" id="Qus4"> </label>
+                    </div>
+                    <div style="display: inline; padding-left: 3%;">
+                        <input style="border: solid aquamarine" id="answ4" type="number" name="Question" value="" />
+                    </div>
+                </div>
+
+                <div>
+                    <div style="display:inline; ">
+                        <label for="Question1"> Question 5 : </label>
+                        <br />
+                        <label for="Question1" id="Qus5"> </label>
+                    </div>
+                    <div style="display: inline; padding-left: 3%;">
+                        <input style="border: solid darkmagenta" id="answ5" type="number" name="Question" value="" />
+                    </div>
+                </div>
+
+
+                <br />
+
+            </form>
+        </fieldset>
+        
+         <button class="button button1"  onclick="Game() "> Submit</button>
+     
+        <button class="button button1" type="reset"> Reset </button>
+    </main>
+
+
+    <script>
+
+
+        debugger
+       
+        var sad = new Audio('Audio/aud.mp3');
+        var win = new Audio('Audio/aud2.mp3');
+
+      
+            
+        var score = 0;
+        var count = 0;
+
+        var randomNumber1 = Math.round(Math.random() * 10);
+        var randomNumber2 = Math.round(Math.random() * 10);
+
+        document.getElementById('Qus1').innerHTML = randomNumber1 + '+' + randomNumber2;
+        var ans1 = randomNumber1 + randomNumber2;
+
+        GenerateRandom();
+        document.getElementById('Qus2').innerHTML = randomNumber1 + '-' + randomNumber2;
+        var ans2 = randomNumber1 - randomNumber2;
+
+
+
+        GenerateRandom();
+        document.getElementById('Qus3').innerHTML = randomNumber1 + '+' + randomNumber2;
+        var ans3 = randomNumber1 + randomNumber2;
+        GenerateRandom();
+        document.getElementById('Qus4').innerHTML = randomNumber1 + '-' + randomNumber2;
+        var ans4 = randomNumber1 - randomNumber2;
+        GenerateRandom();
+        document.getElementById('Qus5').innerHTML = randomNumber1 + '-' + randomNumber2;
+        var ans5 = randomNumber1 - randomNumber2;
+
+
+        const Game = () => {
+            var usera1 = document.getElementById('answ1').value;
+            var usera2 = document.getElementById('answ2').value;
+            var usera3 = document.getElementById('answ3').value;
+            var usera4 = document.getElementById('answ4').value;
+            var usera5 = document.getElementById('answ5').value;
+
+
+            if (usera1 == ans1) {
+
+                wrong = 0; //wrong answers
+                score = score + 2;
+                count++; //correct answers
+                GenerateRandom();
+
+            }
+
+            if (usera2 == ans2) {
+
+                wrong = 0; //wrong answers
+                score = score + 2;
+                count++; //correct answers
+                GenerateRandom();
+
+            }
+
+            if (usera3 == ans3) {
+
+                wrong = 0; //wrong answers
+                score = score + 2;
+                count++; //correct answers
+                GenerateRandom();
+
+            }
+
+            if (usera4 == ans4) {
+
+                wrong = 0; //wrong answers
+                score = score + 2;
+                count++; //correct answers
+                GenerateRandom();
+
+            }
+
+            if (usera5 == ans5) {
+
+                wrong = 0; //wrong answers
+                score = score + 2;
+                count++; //correct answers
+
+
+            }
+            if (score >= 7) {
+                document.body.style.backgroundImage = "url('img/an2.gif')";
+                win.play();
+                setTimeout(() => ImgWin(), 100);
+               
+               
+
+            }
+
+            if (score < 7) {
+                  
+               
+                 sad.play();
+                alert("OOOh Nooo your score = " + score + "    please press OK to Again");
+                
+                window.location = "EasyLevel.html";
+
+            }
+          
+
+
+
+        };
+        
+
+        function ImgWin() {
+            alert(" Great !! your score = " + score + "     please press Ok to move Intermediatel Level");
+          
+
+            window.location = "IntermediateLevel.html";
+        }
+
+        function GenerateRandom() {
+            randomNumber1 = Math.floor(Math.random() * 10 + 1)
+            randomNumber2 = Math.floor(Math.random() * 10 + 1)
+
+        }
+
+
+
+
+    </script>
+
+</body>
+</html>
